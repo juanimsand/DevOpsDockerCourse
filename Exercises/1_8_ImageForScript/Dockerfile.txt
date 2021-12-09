@@ -1,0 +1,17 @@
+# Start from the ubuntu18:04 image
+FROM ubuntu:18.04
+
+# Use /usr/src/app as our workdir. The following instructions will be executed in this location.
+WORKDIR /usr/src/app
+
+# Copy the input.sh file from this location to /usr/src/app/ creating /usr/src/app/input.sh.
+COPY input.sh .
+
+# Execute commands for get curl installed
+RUN apt update
+RUN apt upgrade
+RUN apt install -y curl
+RUN chmod +x input.sh
+
+# When running docker run the command will be ./hello.sh
+CMD ./input.sh
