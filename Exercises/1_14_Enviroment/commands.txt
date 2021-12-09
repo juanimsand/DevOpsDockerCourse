@@ -1,0 +1,15 @@
+# Generate images from new Dockerfiles
+
+# Backend image
+sudo docker build . -t example-backend
+
+# Frontend image
+sudo docker build . -t example-frontend
+
+# Running images on respective ports
+
+# Backend
+sudo docker run -p 8080:8080 example-backend
+
+# Frontend
+sudo docker run -p 1234:5000 example-frontend
