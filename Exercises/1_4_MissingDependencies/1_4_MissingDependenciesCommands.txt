@@ -1,0 +1,64 @@
+# Command 1
+
+# Start the process of ubuntu image in a container named jubuntu
+sudo docker run -d -it --name jubuntu ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+# Command 2
+
+# Attaching to jubuntu container
+sudo docker attach jubuntu
+
+# Typing helsinki.fi as input
+helsinki.fi
+
+# Command 3
+
+# Accesing to jubuntu container for install curl
+sudo docker exec -it jubuntu bash
+
+# Command 4
+
+# Listing containers that are running
+sudo docker container ls
+
+# Listing all containers
+sudo docker container ls -a
+
+# Starting jubuntu container
+sudo docker start jubuntu
+
+# Listing containers that are started for check that jubuntu is running
+sudo docker container ls
+
+# Accesing to jubuntu container for install curl
+sudo docker exec -it jubuntu bash
+
+# Command 5 - The followings commands are for installing curl on jubuntu container and no image output is linked to them as its output was too long
+
+# Updating apt
+apt update
+
+# Upgrading apt
+apt upgrade
+
+# Installing curl
+apt install curl
+
+# Checking that curl is install executing the version command
+curl --version
+
+# Exiting from jubuntu container
+exit
+
+# Command 6
+
+# Checking that jubuntu container is running
+sudo docker container ls
+
+# Command 7
+
+# Attaching to jubuntu container
+sudo docker attach jubuntu
+
+# Typing helsinki.fi as input
+helsinki.fi
