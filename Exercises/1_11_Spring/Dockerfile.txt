@@ -1,0 +1,17 @@
+# We need Java 8.
+FROM openjdk:8
+
+# Setting port to listen
+EXPOSE 8080
+
+# Setting the working directory
+WORKDIR /usr/src/app
+
+# Copy all of the content from the project to the image
+COPY . .
+
+# Building the project
+RUN ./mvnw package
+
+# Running the project
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
